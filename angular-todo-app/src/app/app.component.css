@@ -1,54 +1,133 @@
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    padding: 40px 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
+/* Container for the to-do list */
 .todo-container {
-    max-width: 500px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect for the todo container */
+.todo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Input field styles */
 .todo-input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
+.todo-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* List styles */
 .todo-list {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
+/* Individual todo item styling */
 .todo-item {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
+.todo-item:hover {
+    background-color: #e0e4e7;
+}
+
+/* Delete button in todo item */
 .todo-item button {
     background-color: #e74c3c;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 8px 12px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .todo-item button:hover {
     background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Smooth scrolling for list */
+.todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 8px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background-color: #2980b9;
 }

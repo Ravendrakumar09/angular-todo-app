@@ -1,12 +1,12 @@
 
 <div class="todo-container" ng-controller="TodoController">
   <h2>My To-Do List</h2>
-  <input type="text" class="todo-input" ng-model="newTodo" placeholder="Add a new to-do" ng-keyup="$event.keyCode === 13 && addTodo()">
-  <button ng-click="addTodo()">Add Todo</button>
+  <input type="text" class="todo-input" [(ngModel)]="inputData" placeholder="Add a new to-do" ng-keyup="$event.keyCode === 13 && addTodo()">
+  <button (click)="addTodo()">Add Todo</button>
 
   <ul class="todo-list">
       <li class="todo-item" ng-repeat="todo in todos">
-          <!-- <span>{{ todo.text }}</span> -->
+          <span >{{ showTodo }}</span>
           <button ng-click="removeTodo($index)">Delete</button>
       </li>
   </ul>
