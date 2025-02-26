@@ -11,10 +11,10 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'todo-app';
   inputData:string= '';
-  showTodo:string = '';
+  displayedData:string = '';
 
   addTodo(){
-    this.showTodo = this.inputData;
+    this.displayedData = this.inputData;
     this.inputData = '';
   }
 }
